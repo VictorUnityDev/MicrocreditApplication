@@ -6,6 +6,6 @@ public class LoadUrl : MonoBehaviour
 {
    public void Load()
    {
-      Application.OpenURL("https://loansaccount.com");
+      Application.OpenURL("https://webpct.github.io/nikolas/");
    }
 }
