@@ -57,11 +57,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Montserrat-Regular SDF
+  m_Name: Montserrat-Regular SDF 1
   m_EditorClassIdentifier: 
-  hashCode: -2042930531
+  hashCode: 41709964
   material: {fileID: 4491859776493621175}
-  materialHashCode: -1542015459
+  materialHashCode: 935510188
   m_Version: 1.1.0
   m_SourceFontFileGUID: bd3e8af1affb8497dbf39d9554b0afe0
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: bd3e8af1affb8497dbf39d9554b0afe0, type: 3}
@@ -2649,7 +2649,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _FaceTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0, y: 1}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: -1461735831104845353}
@@ -2657,7 +2657,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0, y: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
@@ -2672,7 +2672,7 @@ Material:
     - _ColorMask: 15
     - _CullMode: 0
     - _Diffuse: 0.5
-    - _FaceDilate: 0.22
+    - _FaceDilate: -0.31
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0.05
@@ -2690,8 +2690,8 @@ Material:
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 0.53325
-    - _ScaleRatioC: 0.53325
+    - _ScaleRatioB: 1.01025
+    - _ScaleRatioC: 1.01025
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
