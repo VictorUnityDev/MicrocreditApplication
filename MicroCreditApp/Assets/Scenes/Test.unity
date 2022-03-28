@@ -415,7 +415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8b6f26ce6ca4f749fb54f473353b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Url: https://webpct.github.io/nikolas/
+  link: {fileID: 11400000, guid: eb06cd3433f0543c184b12a918cf8fd8, type: 2}
+  Url: 
   status: {fileID: 1642653722}
 --- !u!4 &1095679375
 Transform:

@@ -1,41 +1,22 @@
-/*
- * Copyright (C) 2012 GREE, Inc.
- * 
- * This software is provided 'as-is', without any express or implied
- * warranty.  In no event will the authors be held liable for any damages
- * arising from the use of this software.
- * 
- * Permission is granted to anyone to use this software for any purpose,
- * including commercial applications, and to alter it and redistribute it
- * freely, subject to the following restrictions:
- * 
- * 1. The origin of this software must not be misrepresented; you must not
- *    claim that you wrote the original software. If you use this software
- *    in a product, an acknowledgment in the product documentation would be
- *    appreciated but is not required.
- * 2. Altered source versions must be plainly marked as such, and must not be
- *    misrepresented as being the original software.
- * 3. This notice may not be removed or altered from any source distribution.
- */
 
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 #if UNITY_2018_4_OR_NEWER
 using UnityEngine.Networking;
 #endif
-using UnityEngine.UI;
 
 public class SampleWebView : MonoBehaviour
 {
-    public string Url;
-    public TMP_Text status;
-    WebViewObject webViewObject;
+    [SerializeField] private Link link;
+    [SerializeField]private string Url;
+    [SerializeField] private TMP_Text status;
+    private WebViewObject webViewObject;
 
     
     IEnumerator Start()
     {
+        Url = link.address;
         webViewObject = (new GameObject("WebViewObject")).AddComponent<WebViewObject>();
         webViewObject.Init(
            
@@ -143,21 +124,4 @@ public class SampleWebView : MonoBehaviour
 #endif
         yield break;
     }
-
-    // void OnGUI()
-    // {
-    //     var x = 10;
-    //     
-    //
-    //     if (GUI.Button(new Rect(x, 1200, 40, 40), "r")) {
-    //         webViewObject.Reload();
-    //     }
-    //     x += 120;
-    //     
-    //     if (GUI.Button(new Rect(x, 1200, 40, 40), "x")) {
-    //         webViewObject.ClearCookies();
-    //      
-    //     }
-    //     x += 120;
-    // }
 }

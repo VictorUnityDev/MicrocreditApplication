@@ -1,6 +1,6 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ScreensScene : MonoBehaviour
@@ -10,14 +10,17 @@ public class ScreensScene : MonoBehaviour
     [SerializeField] private GameObject rulesPanel;
     [SerializeField] private GameObject mainScreenPanel;
     [SerializeField] private GameObject lineMenu;
-    
-    [SerializeField] SaveManager _saveManager;
 
-    private int _currentIndex;
+    [SerializeField] private GameObject currentButton;
+    [SerializeField] private GameObject lastButton;
 
-  private void Start()
+    [SerializeField] private SaveManager _saveManager;
+
+    private int _currentIndex = 1;
+    private int _lastIndex;
+
+    private void Start()
     {
-       
         if (_saveManager.IsFirstEnter)
         {
             OpenFirstScreen();
@@ -47,18 +50,30 @@ public class ScreensScene : MonoBehaviour
         {
             if (i == _currentIndex + 1)
             {
-                HideScreenPrevious(_screensForFirstStart[i-1]);
+                HideScreenPrevious(_screensForFirstStart[i - 1]);
                 OpenScreenNext(_screensForFirstStart[i]);
                 _currentIndex = _screensForFirstStart[i].index;
+                OpenLastScreen();
                 break;
             }
+        }
+    }
+
+    private void OpenLastScreen()
+    {
+        var last = _screensForFirstStart.Last().index;
+        if (_currentIndex == last)
+        {
+            currentButton.gameObject.SetActive(false);
+            lastButton.gameObject.SetActive(true);
         }
     }
 
     private void OpenScreenNext(GameScreen screen)
     {
         screen.gameObject.SetActive(true);
-    } 
+    }
+
     private void HideScreenPrevious(GameScreen screen)
     {
         screen.gameObject.SetActive(false);
