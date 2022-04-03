@@ -6,14 +6,13 @@ public class SaveManager : MonoBehaviour
    public bool IsFirstEnter { get; set; }
    
 
-   private void Awake()
+   private void OnEnable()
    {
       Save.OnFirstEnter += Result;
    }
 
    private void Result(bool result)
    {
-      Debug.Log(result);
       IsFirstEnter = result;
    }
 

@@ -12,6 +12,11 @@ public class LoadUrl : MonoBehaviour
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
       _link.address = url;
    }
-   
-   
+
+   public void OpenInSite(string str)
+   {
+      Application.OpenURL(str);
+   }
+
+
 }
