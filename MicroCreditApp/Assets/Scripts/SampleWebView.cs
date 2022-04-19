@@ -12,10 +12,12 @@ public class SampleWebView : MonoBehaviour
     [SerializeField]private string Url;
     [SerializeField] private TMP_Text status;
     private WebViewObject webViewObject;
+    
 
     
     IEnumerator Start()
     {
+        
         Url = link.address;
         webViewObject = (new GameObject("WebViewObject")).AddComponent<WebViewObject>();
         webViewObject.Init(
@@ -76,7 +78,7 @@ public class SampleWebView : MonoBehaviour
         webViewObject.bitmapRefreshCycle = 1;
 #endif
 
-        webViewObject.SetMargins(0, 0, 0, Screen.height/ 22);
+        webViewObject.SetMargins(0, 70, 0, Screen.height/ 600);
         webViewObject.SetTextZoom(100); 
         webViewObject.SetVisibility(true);
 

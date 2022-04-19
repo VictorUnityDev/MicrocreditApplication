@@ -35,14 +35,12 @@ public class Save : MonoBehaviour
         count = LoadData(SESSIONS, _countSessions);
         count += 1;
         var currentCount = count;
-        Debug.Log(currentCount);
         SaveData(SESSIONS, currentCount);
     }
 
     private void SaveData(string str, int count)
     {
         PlayerPrefs.SetInt(str, count);
-        Debug.Log("Save" + count);
         PlayerPrefs.Save();
     }
 

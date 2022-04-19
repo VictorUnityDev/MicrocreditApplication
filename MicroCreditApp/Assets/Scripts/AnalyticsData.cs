@@ -5,8 +5,8 @@ using UnityEngine.Analytics;
 
 public class AnalyticsData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   
+   private void Start()
     {
      AnalyticsResult result =   Analytics.CustomEvent("Start");
      Analytics.FlushEvents();
@@ -17,7 +17,22 @@ public class AnalyticsData : MonoBehaviour
     {
         Analytics.CustomEvent("Opened WebView", new Dictionary<string, object>
         {
-            { "name",  name},
+            { "time_elapsed", Time.timeSinceLevelLoad }
+        });
+    }
+
+    public void CloseWebview()
+    {
+        Analytics.CustomEvent("Close Vebwiew", new Dictionary<string, object>
+        {
+            { "time_elapsed", Time.timeSinceLevelLoad }
+        });
+    }
+
+    public void BookWasOpened()
+    {
+        Analytics.CustomEvent("Close Vebwiew", new Dictionary<string, object>
+        {
             { "time_elapsed", Time.timeSinceLevelLoad }
         });
     }
